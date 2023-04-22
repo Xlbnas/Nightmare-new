@@ -1,0 +1,179 @@
+html,body{
+	position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: scroll;
+    background: #e6e7ec
+}
+/***********上下盒子***********/
+#chessBox,#chess_buttom_box{
+    position: relative;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 1px 1px 3px 1px #9e9e9e5e;
+}
+
+#chess_buttom_box{
+    margin-top: 10px;
+    height: 50px;
+    top: 0px;
+    box-shadow: 0px 0px 0px 0px #9e9e9e5e;
+}
+
+#canvas{
+    display: block;
+    top: 0px;
+    position: absolute;
+    background: #f7e6b7;
+    border-radius: 4px;
+}
+
+.WJ_A,.WJ_B{
+    position: relative;
+    width: 100%;
+    height: 70px;
+    display: none;
+}
+
+.mobile_wja,.mobile_wjb{
+    display: block;
+}
+
+.WJ_A_left,.WJ_B_right{
+    position: absolute;
+    top: 15px;
+    width: 120px;
+    height: 40px;
+    background: #f3f3f3;
+	box-shadow: 0px 0px 5px 1px #dedede;
+}
+.WJ_B_right{
+	right: 0;
+	border-radius: 30px 0px 0px 30px;
+}
+.WJ_A_left{
+	left: 0;
+	border-radius: 0px 30px 30px 0px;
+}
+.WJ_A > .WJ_A_left > .Wchess{
+	top: 5px;
+	left: 10px;
+}
+
+.WJ_B > .WJ_B_right > .Bchess{
+	top: 5px;
+	right: 10px;
+}
+
+
+
+.Wchess_expression{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+	display: none;
+}
+.Wchess_expression::after{
+	content: "白棋获胜";
+	position: absolute;
+	width: 150%;
+	height: 100%;
+	left: 50px;
+	top: 0px;
+	font-size: 15px;
+	text-align: center;
+	line-height: 50px;
+}
+.Bchess_expression{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: 10px;
+	display: none;
+}
+.Bchess_expression::after{
+	content: "黑棋获胜";
+	position: absolute;
+	width: 150%;
+	height: 100%;
+	left: -82px;
+	top: 0px;
+	font-size: 15px;
+	text-align: center;
+	line-height: 50px;
+}
+
+/*******************************/
+
+/***********重开撤回按钮***********/
+.regret,.anew,.select{
+    position: absolute;
+    width: 90px;
+    height: 30px;
+    background: #03A9F4;
+    color: #fff;
+    outline: none;
+    border: 0px;
+    user-select: none;
+    border-radius: 20px;
+    line-height: 30px;
+    left: 239px;
+}
+.regret{left: 122px;}
+.select{display: none;}
+.mobile_regret,.mobile_anew,.mobile_select{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 30px;
+    left: 250px;
+    font-size: 12px;
+	box-shadow: 0px 0px 5px 1px #c7c7c7;
+}
+.mobile_regret{left: 310px;}
+.mobile_select{display: block;left: 10px;}
+/*******************************/
+
+/***********黑白棋子***********/
+.Bchess,.Wchess,.mobile_Bchess,.mobile_Bchess{
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    border-radius: 30px;
+    background: radial-gradient(#62697b 10%,#49535d 90%);
+    box-shadow: 1px 1px 2px 0 #0000006e;
+    font-size: 10px;
+    line-height: 27px;
+    text-align: center;
+    color: #fff
+}
+.Wchess{
+    background: radial-gradient( #fdf9f9 20%,#edf0f0 90%);
+    box-shadow: 1px 1px 2px 0 #0000006e;
+    color: #000
+}
+.mobile_Bchess,.mobile_Wchess{
+	width: 19px;
+	height: 19px;
+	line-height: 19px;
+	font-size: 10px;
+	color: #fff;
+}
+.mobile_Wchess{color: #000000;}
+
+.Wchess_steps,.Bchess_steps{
+	position: absolute;
+	width: 82px;
+	height: 30px;
+	border-radius: 20px;
+	top: 5px;
+	font-size: 10px;
+	text-align: center;
+	line-height: 30px;
+	color: #949494;
+}
+.Wchess_steps{
+	right: 0px;
+}
+/*******************************/

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" href="./wuzi_chese/1.css">
+	<link rel="stylesheet" href="./wuzi_chese/2.css">
+    <link rel="icon" href="ymico.png">
+	<style>
+		body .back {
+			float: left;
+			color: #49535d;
+			font-family: 'Microsoft YaHei';
+			font-size: 30px;
+			font-weight: 7500;
+			transition: transform .3s;
+			text-decoration: none;
+			display: block;
+			position: absolute;
+			top: 32px;
+			right: 54px;
+			z-index: 5;
+		}
+
+		body .back:hover {
+			transform: rotate(10deg);
+		}
+	</style>
+	<title>五子棋</title>
+</head>
+
+<body>
+	<a href="index.html" class="back">Xlbnas's Shelter</a>
+	<div id="chessBox" style="top: 226.5px; width: 450px; height: 450px;">
+		<canvas id="canvas" width="450" height="450"></canvas>
+	</div>
+	<div id="chess_buttom_box" style="width: 450px; top: 246.5px; height: 30px;">
+		<button class="select">选项</button>
+		<button class="anew">撤回</button>
+		<button class="regret">重开</button>
+	</div>
+	<div class="WJ_A">
+		<div class="WJ_A_left">
+			<div class="Wchess"></div>
+			<div class="Wchess_steps">白子第0步</div>
+			<div class="Wchess_expression">
+				<div class="emoji  emoji--haha">
+					<div class="emoji__face">
+						<div class="emoji__eyes"></div>
+						<div class="emoji__mouth">
+							<div class="emoji__tongue"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="WJ_B">
+		<div class="WJ_B_right">
+			<div class="Bchess"></div>
+			<div class="Bchess_steps">黑子第0步</div>
+		</div>
+		<div class="Bchess_expression">
+			<div class="emoji  emoji--haha">
+				<div class="emoji__face">
+					<div class="emoji__eyes"></div>
+					<div class="emoji__mouth">
+						<div class="emoji__tongue"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="wuzi_chese/1.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>html5+js倾斜迷宫小游戏</title>
+
+<link rel="stylesheet" href="./QingXie_Game/style.css">
+
+<link rel="icon" href="ymico.png">
+<style>
+  body .back {
+      float: left;
+      color: #fff;
+      font-family: 'Microsoft YaHei';
+      font-size: 30px;
+      font-weight: 7500;
+      transition: transform .3s;
+      text-decoration: none;
+      display: block;
+      position: absolute;
+      top: 32px;
+      right: 54px;
+      z-index: 2;
+    }
+
+    body .back:hover {
+      transform: rotate(10deg);
+    }
+</style>
+</head>
+<body>
+<a href="continue_QingXie.html" class="back">Xlbnas's Shelter</a>
+<div id="center">
+  <div id="game">
+    <div id="maze" style="transform: rotateY(0deg) rotateX(0deg);">
+      <div id="end"></div>
+    <div class="ball" style="left: 17.5px; top: 17.5px;"></div><div class="ball" style="left: 332.5px; top: 17.5px;"></div><div class="ball" style="left: 17.5px; top: 297.5px;"></div><div class="ball" style="left: 332.5px; top: 297.5px;"></div><div class="wall" style="left: 0px; top: 0px; width: 10px; height: 350px; transform: rotate(-90deg);"></div><div class="wall" style="left: 0px; top: 0px; width: 10px; height: 315px; transform: rotate(0deg);"></div><div class="wall" style="left: 0px; top: 315px; width: 10px; height: 350px; transform: rotate(-90deg);"></div><div class="wall" style="left: 350px; top: 0px; width: 10px; height: 315px; transform: rotate(0deg);"></div><div class="wall" style="left: 0px; top: 210px; width: 10px; height: 35px; transform: rotate(-90deg);"></div><div class="wall" style="left: 0px; top: 280px; width: 10px; height: 35px; transform: rotate(-90deg);"></div><div class="wall" style="left: 35px; top: 35px; width: 10px; height: 70px; transform: rotate(-90deg);"></div><div class="wall" style="left: 35px; top: 245px; width: 10px; height: 35px; transform: rotate(-90deg);"></div><div class="wall" style="left: 70px; top: 70px; width: 10px; height: 70px; transform: rotate(-90deg);"></div><div class="wall" style="left: 70px; top: 140px; width: 10px; height: 35px; transform: rotate(-90deg);"></div><div class="wall" style="left: 70px; top: 175px; width: 10px; height: 35px; transform: rotate(-90deg);"></div><div class="wall" style="left: 70px; top: 210px; width: 10px; height: 35px; transform: rotate(-90deg);"></div><div class="wall" style="left: 105px; top: 105px; width: 10px; height: 35px; transform: rotate(-90deg);"></div><div class="wall" style="left: 105px; top: 280px; width: 10px; height: 105px; transform: rotate(-90deg);"></div><div class="wall" style="left: 140px; top: 210px; width: 10px; height: 35px; transform: rotate(-90deg);"></div><div class="wall" style="left: 175px; top: 70px; width: 10px; height: 70px; transform: rotate(-90deg);"></div><div class="wall" style="left: 175px; top: 245px; width: 10px; height: 35px; transform: rotate(-90deg);"></div><div class="wall" style="left: 210px; top: 35px; width: 10px; height: 35px; transform: rotate(-90deg);"></div><div class="wall" style="left: 210px; top: 210px; width: 10px; height: 70px; transform: rotate(-90deg);"></div><div class="wall" style="left: 245px; top: 105px; width: 10px; height: 70px; transform: rotate(-90deg);"></div><div class="wall" style="left: 245px; top: 245px; width: 10px; height: 70px; transform: rotate(-90deg);"></div><div class="wall" style="left: 280px; top: 35px; width: 10px; height: 35px; transform: rotate(-90deg);"></div><div class="wall" style="left: 280px; top: 70px; width: 10px; height: 35px; transform: rotate(-90deg);"></div><div class="wall" style="left: 280px; top: 105px; width: 10px; height: 35px; transform: rotate(-90deg);"></div><div class="wall" style="left: 280px; top: 140px; width: 10px; height: 70px; transform: rotate(-90deg);"></div><div class="wall" style="left: 280px; top: 280px; width: 10px; height: 70px; transform: rotate(-90deg);"></div><div class="wall" style="left: 35px; top: 35px; width: 10px; height: 70px; transform: rotate(0deg);"></div><div class="wall" style="left: 35px; top: 140px; width: 10px; height: 70px; transform: rotate(0deg);"></div><div class="wall" style="left: 70px; top: 70px; width: 10px; height: 70px; transform: rotate(0deg);"></div><div class="wall" style="left: 70px; top: 175px; width: 10px; height: 35px; transform: rotate(0deg);"></div><div class="wall" style="left: 70px; top: 245px; width: 10px; height: 70px; transform: rotate(0deg);"></div><div class="wall" style="left: 105px; top: 0px; width: 10px; height: 35px; transform: rotate(0deg);"></div><div class="wall" style="left: 105px; top: 140px; width: 10px; height: 35px; transform: rotate(0deg);"></div><div class="wall" style="left: 105px; top: 210px; width: 10px; height: 70px; transform: rotate(0deg);"></div><div class="wall" style="left: 140px; top: 35px; width: 10px; height: 70px; transform: rotate(0deg);"></div><div class="wall" style="left: 140px; top: 210px; width: 10px; height: 35px; transform: rotate(0deg);"></div><div class="wall" style="left: 175px; top: 0px; width: 10px; height: 70px; transform: rotate(0deg);"></div><div class="wall" style="left: 175px; top: 210px; width: 10px; height: 35px; transform: rotate(0deg);"></div><div class="wall" style="left: 175px; top: 280px; width: 10px; height: 35px; transform: rotate(0deg);"></div><div class="wall" style="left: 210px; top: 140px; width: 10px; height: 35px; transform: rotate(0deg);"></div><div class="wall" style="left: 210px; top: 210px; width: 10px; height: 35px; transform: rotate(0deg);"></div><div class="wall" style="left: 245px; top: 35px; width: 10px; height: 140px; transform: rotate(0deg);"></div><div class="wall" style="left: 245px; top: 245px; width: 10px; height: 70px; transform: rotate(0deg);"></div><div class="wall" style="left: 280px; top: 70px; width: 10px; height: 35px; transform: rotate(0deg);"></div><div class="wall" style="left: 280px; top: 140px; width: 10px; height: 70px; transform: rotate(0deg);"></div><div class="wall" style="left: 315px; top: 35px; width: 10px; height: 35px; transform: rotate(0deg);"></div><div class="wall" style="left: 315px; top: 175px; width: 10px; height: 70px; transform: rotate(0deg);"></div></div>
+    <div id="joystick">
+      <div class="joystick-arrow"></div>
+      <div class="joystick-arrow"></div>
+      <div class="joystick-arrow"></div>
+      <div class="joystick-arrow"></div>
+      <div id="joystick-head" style="left: 0px; top: 0px; animation: 0s ease 0s 1 normal none running glow; cursor: grab;"></div>
+    </div>
+    <div id="note" style="opacity: 1;">Click the joystick to start!
+        <p>Move every ball to the center. Ready for hard mode? Press H</p></div>
+  </div>
+</div>
+
+<div id="youtube-card">
+ 如何用JavaScript模拟迷宫中的球运动
+</div>
+
+<script src="./QingXie_Game/script.js"></script>
+
+
+</body></html>

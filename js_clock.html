@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="ymico.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./js_clock_files/index.css">
+    <title>时间钟</title>
+    <style>
+        body .back {
+            float: left;
+            color: #fff;
+            font-family: 'Microsoft YaHei';
+            font-size: 30px;
+            font-weight: 7500;
+            transition: transform .3s;
+            text-decoration: none;
+            display: block;
+            position: absolute;
+            top: 32px;
+            right: 54px;
+            z-index: 2;
+        }
+
+        body .back:hover {
+            transform: rotate(10deg);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="back">Xlbnas's Slelter</a>
+    <div class="wrapper">
+        <div class="column" style="transform: translateY(calc((50vh - 86px) - 43px));">
+            <div class="close">0</div>
+            <div class="visible">1</div>
+            <div class="close">2</div>
+        </div>
+        <div class="column" style="transform: translateY(calc((50vh - 172px) - 43px));">
+            <div class="far">0</div>
+            <div class="close">1</div>
+            <div class="visible">2</div>
+            <div class="close">3</div>
+            <div class="far">4</div>
+            <div class="far">5</div>
+            <div class="disfar">6</div>
+            <div class="disfar">7</div>
+            <div class="">8</div>
+            <div class="">9</div>
+        </div>
+        <div class="colon">:</div>
+        <div class="column" style="transform: translateY(calc((50vh - 258px) - 43px));">
+            <div class="far">0</div>
+            <div class="far">1</div>
+            <div class="close">2</div>
+            <div class="visible">3</div>
+            <div class="close">4</div>
+            <div class="far">5</div>
+        </div>
+        <div class="column" style="transform: translateY(calc((50vh - 774px) - 43px));">
+            <div class="">0</div>
+            <div class="">1</div>
+            <div class="">2</div>
+            <div class="">3</div>
+            <div class="disfar">4</div>
+            <div class="disfar">5</div>
+            <div class="far">6</div>
+            <div class="far">7</div>
+            <div class="close">8</div>
+            <div class="visible">9</div>
+        </div>
+        <div class="colon">:</div>
+        <div class="column" style="transform: translateY(calc((50vh - 430px) - 43px));">
+            <div class="disfar">0</div>
+            <div class="disfar">1</div>
+            <div class="far">2</div>
+            <div class="far">3</div>
+            <div class="close">4</div>
+            <div class="visible">5</div>
+        </div>
+        <div class="column" style="transform: translateY(calc((50vh - 774px) - 43px));">
+            <div class="">0</div>
+            <div class="">1</div>
+            <div class="">2</div>
+            <div class="">3</div>
+            <div class="disfar">4</div>
+            <div class="disfar">5</div>
+            <div class="far">6</div>
+            <div class="far">7</div>
+            <div class="close">8</div>
+            <div class="visible">9</div>
+        </div>
+    </div>
+    <script src="./js_clock_files/jquery.min.js"></script>
+    <script src="./js_clock_files/index.js"></script>
+
+</body>
+
+</html>

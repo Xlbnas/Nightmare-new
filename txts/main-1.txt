@@ -1,0 +1,52 @@
+html文件，用来测试
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="Generator" content="EditPlus®">
+
+<meta name="Author" content="">
+
+<meta name="Keywords" content="">
+
+<meta name="Description" content="">
+
+<title>canvas场景连线特效</title>
+
+<style type="text/css">
+
+*{
+
+margin: 0px;
+
+padding: 0px;
+
+}
+
+body{
+
+background-color: #f4f4f4;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- <canvas id="c_n9" width="1366" height="403" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"></canvas> -->
+
+<script type="text/javascript" src="test-clear.js" opacity= 0.6></script>
+
+</body>
+
+</html>
+————————————————
+版权声明：本文为CSDN博主「隐市之人」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/u013556477/java/article/details/82819785

@@ -1,0 +1,19 @@
+#llxx {
+    position: absolute;
+    top: 30px;
+    left: 498px;
+}
+.sk-bd ul li {
+    float: left;
+    margin-right: 10px;
+    border: 1px solid transparent;
+    width: 290px;
+    height: 460px;
+}
+.sk-bd ul li:nth-child(4n) {
+    margin-right: 0;
+}
+.sk-bd ul li:hover {
+    border: 1px solid #c81523;
+    border-bottom: 0;
+}

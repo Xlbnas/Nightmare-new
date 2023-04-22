@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title> 益智游戏演示</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./touching_fish_files/style.css">
+  <link rel="icon" href="ymico.png">
+  <style>
+    body .back {
+      float: left;
+      color: #fff;
+      font-family: 'Microsoft YaHei';
+      font-size: 30px;
+      font-weight: 7500;
+      transition: transform .3s;
+      text-decoration: none;
+      display: block;
+      position: absolute;
+      top: 32px;
+      right: 54px;
+      z-index: 2;
+    }
+
+    body .back:hover {
+      transform: rotate(10deg);
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="back">Xlbnas's Shelter</a>
+  <div class="top-bar">
+    <button class="button level-select-button">Levels</button>
+  </div>
+
+  <ol class="level-list">
+    <li class="level-list__item did-complete is-playing" data-id="intro-fixed1"><span
+        class="level-list__item__number">1</span> <span class="level-list__item__blurb">Tutorial</span><span
+        class="level-list__item__check">✔</span></li>
+    <li class="level-list__item did-complete" data-id="intro-fixed2"><span class="level-list__item__number">2</span>
+      <span class="level-list__item__blurb">Tutorial</span><span class="level-list__item__check">✔</span>
+    </li>
+    <li class="level-list__item" data-id="intro-fixed3"><span class="level-list__item__number">3</span> <span
+        class="level-list__item__blurb">★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="intro-free1"><span class="level-list__item__number">4</span> <span
+        class="level-list__item__blurb">Tutorial</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m3x3-2-med"><span class="level-list__item__number">5</span> <span
+        class="level-list__item__blurb">★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m3x3-fixed-switch"><span class="level-list__item__number">6</span> <span
+        class="level-list__item__blurb">★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m4x4-2"><span class="level-list__item__number">7</span> <span
+        class="level-list__item__blurb">★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m4x4-1"><span class="level-list__item__number">8</span> <span
+        class="level-list__item__blurb">★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m4x4-3"><span class="level-list__item__number">9</span> <span
+        class="level-list__item__blurb">★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m4x4-4"><span class="level-list__item__number">10</span> <span
+        class="level-list__item__blurb">★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m4x4-5"><span class="level-list__item__number">11</span> <span
+        class="level-list__item__blurb">★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m4x4-6-med"><span class="level-list__item__number">12</span> <span
+        class="level-list__item__blurb">★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m4x4-7-hard1"><span class="level-list__item__number">13</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m4x4-8-hard2"><span class="level-list__item__number">14</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m4x4-9-hard1"><span class="level-list__item__number">15</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m4x4-10-hard1"><span class="level-list__item__number">16</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m5x5-3"><span class="level-list__item__number">17</span> <span
+        class="level-list__item__blurb">★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m5x5-1"><span class="level-list__item__number">18</span> <span
+        class="level-list__item__blurb">★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m5x5-2"><span class="level-list__item__number">19</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m5x5-4"><span class="level-list__item__number">20</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m5x5-5"><span class="level-list__item__number">21</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m5x5-6"><span class="level-list__item__number">22</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m5x5-7"><span class="level-list__item__number">23</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m5x5-8"><span class="level-list__item__number">24</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m5x5-9"><span class="level-list__item__number">25</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m5x5-10"><span class="level-list__item__number">26</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m5x5-11"><span class="level-list__item__number">27</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m5x5-12"><span class="level-list__item__number">28</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m6x6-1-hard1"><span class="level-list__item__number">29</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m6x6-2"><span class="level-list__item__number">30</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m6x6-3"><span class="level-list__item__number">31</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="pivot-4x4-intro"><span class="level-list__item__number">32</span> <span
+        class="level-list__item__blurb">Tutorial</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="pivot-5x5-2"><span class="level-list__item__number">33</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="pivot-5x5-swirly"><span class="level-list__item__number">34</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="pivot-5x5-1"><span class="level-list__item__number">35</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="pivot-5x5-3"><span class="level-list__item__number">36</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="pivot-5x5-4"><span class="level-list__item__number">37</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="pivot-5x5-5"><span class="level-list__item__number">38</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="pivot-5x5-6"><span class="level-list__item__number">39</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="pivot-5x5-7"><span class="level-list__item__number">40</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="pivot-6x6-1"><span class="level-list__item__number">41</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="pivot-6x6-3"><span class="level-list__item__number">42</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="pivot-6x6-2"><span class="level-list__item__number">43</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m44"><span class="level-list__item__number">44</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m45"><span class="level-list__item__number">45</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m46"><span class="level-list__item__number">46</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m47"><span class="level-list__item__number">47</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m48"><span class="level-list__item__number">48</span> <span
+        class="level-list__item__blurb">★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m49"><span class="level-list__item__number">49</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="m50"><span class="level-list__item__number">50</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="rotate-tut"><span class="level-list__item__number">51</span> <span
+        class="level-list__item__blurb">Tutorial</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="rotate1"><span class="level-list__item__number">52</span> <span
+        class="level-list__item__blurb">★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="rotate2"><span class="level-list__item__number">53</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="rotate3"><span class="level-list__item__number">54</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="rotate3b"><span class="level-list__item__number">55</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="rotate-5x5-1"><span class="level-list__item__number">56</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="rotate-5x5-2"><span class="level-list__item__number">57</span> <span
+        class="level-list__item__blurb">★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="rotate-5x5-2b"><span class="level-list__item__number">58</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="rotate-6x6-1"><span class="level-list__item__number">59</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="rotate-6x6-2"><span class="level-list__item__number">60</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+    <li class="level-list__item" data-id="rotate-6x6-3"><span class="level-list__item__number">61</span> <span
+        class="level-list__item__blurb">★★★</span><span class="level-list__item__check">✔</span></li>
+  </ol>
+
+  <canvas width="3840" height="1874"></canvas>
+  <p class="instruction" style="top: 540px;">Drag cub to star</p>
+  <button class="button next-level-button is-open" style="top: 540px;">Next level</button>
+
+  <div class="levels">
+
+    <pre id="intro-fixed1" data-blurb="Tutorial">blurb: Tutorial
+instruction: Drag cub to star
+---
+*=.=.
+    !
+. . .
+    !
+@=.=.
+</pre>
+
+    <pre id="intro-fixed2" data-blurb="Tutorial">blurb: Tutorial
+instruction: Drag grid to rotate. Cub and star moves with grid. Orange links stay in place.
+---
+* . .
+    !
+. . .
+    !
+@=.=.
+</pre>
+
+    <pre id="intro-fixed3" data-blurb="★">blurb: ★
+---
+@=. .
+
+. . .
+    !
+*=. .
+</pre>
+
+    <pre id="intro-free1" data-blurb="Tutorial">blurb: Tutorial
+instruction: Blue links move with grid. Rotate grid to connect blue and orange links in different ways.
+---
+@-. .
+!   | 
+. . .
+    |
+*-.-.
+</pre>
+
+    <pre id="m3x3-2-med" data-blurb="★">blurb: ★
+---
+. . *
+| | | 
+. . .
+| | | 
+@ .=.
+</pre>
+
+    <pre id="m3x3-fixed-switch" data-blurb="★">blurb: ★
+---
+*=.-.
+ 
+. . .
+    | 
+@-. .
+</pre>
+
+    <pre id="m4x4-2" data-blurb="★">blurb: ★
+---
+. .=. .
+  | !  
+. . .-*
+  |    
+. . . .
+       
+. @-. .
+</pre>
+
+    <pre id="m4x4-1" data-blurb="★">blurb: ★
+---
+. . . .
+       
+* . . @
+  | ! |
+. . . .
+  !    
+. . . .
+</pre>
+
+    <pre id="m4x4-3" data-blurb="★">blurb: ★
+---
+. @ . .
+! |    
+. . . .
+      |
+.=.=.-.
+|       
+. * . .
+</pre>
+
+    <pre id="m4x4-4" data-blurb="★">blurb: ★
+---
+. . . .
+       
+* . . .
+    !  
+. . .-.
+!      
+.=.=. @
+</pre>
+
+    <pre id="m4x4-5" data-blurb="★">blurb: ★
+---
+.-.-.-.
+|       
+@ .-.-.
+       
+* .=. .
+!   |   
+.-.-. .
+</pre>
+
+    <pre id="m4x4-6-med" data-blurb="★">blurb: ★
+---
+. * . .
+
+.-.=. .
+  |
+. . . .
+!   |
+.=. @ .
+</pre>
+
+    <pre id="m4x4-7-hard1" data-blurb="★★">blurb: ★★
+---
+. . *-.
+       
+.-.=. .
+      |
+.=. . .
+  | |  
+@-.-.=.
+</pre>
+
+    <pre id="m4x4-8-hard2" data-blurb="★★">blurb: ★★
+---
+.-@ .=.
+       
+. . . .
+    |  
+.-. .-*
+  |    
+. .=.-.
+</pre>
+
+    <pre id="m4x4-9-hard1" data-blurb="★★">blurb: ★★
+---
+. . .=.
+  !    
+@-. .-.
+     
+. .=. .
+       
+. . * .
+</pre>
+
+    <pre id="m4x4-10-hard1" data-blurb="★★">blurb: ★★
+---
+. @=. .
+  |   
+. .-.-.
+       
+.-.-.-.
+!     ! 
+. * . .
+</pre>
+
+    <pre id="m5x5-3" data-blurb="★">. . . . .
+  | !   
+. . .-. .
+  |     
+. . . . *
+  |     
+. . .=. .
+  |     
+. @ . . .
+</pre>
+
+    <pre id="m5x5-1" data-blurb="★">@-.-. .-.
+    |    
+. . . . .
+         
+. . .=. .
+         
+. . . .=.
+    |    
+. .=.-* .
+</pre>
+
+    <pre id="m5x5-2" data-blurb="★★">. . . . .
+        
+. .=.-. @
+|       !
+. . . .-.
+        
+.=. . .=.
+!       
+* . . . .
+</pre>
+
+    <pre id="m5x5-4" data-blurb="★★">. . . .-.
+      ! 
+. .-. . .
+  !     |
+.=. . . .
+|        
+. . . . *
+|        
+.-@=. .=.
+</pre>
+
+    <pre id="m5x5-5" data-blurb="★★">. . . . .
+
+. . .-. *
+    !
+. . .-. .
+
+.=. . . .
+    |
+. @-. . .
+</pre>
+
+    <pre id="m5x5-6" data-blurb="★★">. . .-.-.
+!   !    
+. .=.-. .
+|   
+. .-. .-@
+!
+* .=. . .
+      |
+.=. .-.=.
+</pre>
+
+    <pre id="m5x5-7" data-blurb="★★★">.=* . @=.
+|
+. .=. . .
+|   | |
+.=. . .-.
+        |
+. . . .=.
+!    
+. .-.-. .
+</pre>
+
+    <pre id="m5x5-8" data-blurb="★★★">. * . .-.
+  |     
+. . .=.-.
+!       | 
+. . . . .
+        
+. .-. .=.
+        |
+. . .=.-@
+</pre>
+
+    <pre id="m5x5-9" data-blurb="★★★">.-.-. . .
+    |    
+. . . .-@
+  !      
+* . .-. .
+|   !    
+.-. . .=.
+    |   !
+. . .=. .
+</pre>
+
+    <pre id="m5x5-10" data-blurb="★★">. . . . .
+         
+. . . .-@
+  !      
+* . .=. .
+|   !    
+.-. . . .
+         
+. . . . .
+</pre>
+
+    <pre id="m5x5-11" data-blurb="★★★">. . . .=.
+  |     
+. . . .=.
+|        
+. . .-. .
+! |     
+. .=. . .
+|   !   !
+.-@ . * .
+</pre>
+
+    <pre id="m5x5-12" data-blurb="★★">. . .=.=.
+        
+. . . . .
+        
+. . . . @
+        
+. . . . .
+        
+* . .=.=.
+</pre>
+
+    <pre id="m6x6-1-hard1" data-blurb="★★★">. . * . . .
+  ! | |  
+. .-. .-. .
+          |
+. . . . .-.
+      | ! |
+. . .=. . .
+    |
+@-.-. .-. .
+          |
+. .=. . .-.
+</pre>
+
+    <pre id="m6x6-2" data-blurb="★★★">@ .=. . .=.
+  | | !
+. . . .=. .
+  |     |
+. . . .-. .
+|   !
+. . . . . *
+|     |
+.=. .-. . .
+  |   | |
+.-. . . .=.
+</pre>
+
+    <pre id="m6x6-3" data-blurb="★★★">.=. .=.-.-*
+  |        
+.-. . . . .
+        | !
+. . .-.-. .
+!          
+.-. .=.=. .
+           
+@ .=. . . .
+  |     !
+. .-. .-. .
+</pre>
+
+    <pre id="pivot-4x4-intro" data-blurb="Tutorial">instruction: Green links pivot with grid, but point in the same direction
+---
+. .-* .
+  |    
+. . . .
+       
+. .&gt;. .
+       
+. @ . .
+</pre>
+
+    <pre id="pivot-5x5-2" data-blurb="★★">. . .-.-@
+        
+. .&lt;. . .
+        
+.&gt;. . . .
+| !      
+.-.-. . *
+  !     
+. . . . .
+</pre>
+
+    <pre id="pivot-5x5-swirly" data-blurb="★★★">. . . . .
+      ^ 
+.&lt;. . . *
+        
+. . . . .
+        
+@ . . .&gt;.
+  v     
+. . . . .
+</pre>
+
+    <pre id="pivot-5x5-1" data-blurb="★★★">. .-. . .
+      ^ 
+. .&lt;.=.=.
+        
+.&gt;. . .-@
+        
+* . . .=.
+        
+. . . . .
+</pre>
+
+    <pre id="pivot-5x5-3" data-blurb="★★">.=. . .-*
+    v   
+. . . . .
+         
+. . .-.J.
+         
+@-. . . .
+    v   
+.&lt;. . . .
+</pre>
+
+    <pre id="pivot-5x5-4" data-blurb="★★★">.-.-. @&gt;.
+!     ^ 
+. . . . .
+  |      
+. . . . .
+  |     
+. . . .=*
+    ^    
+. . .-. .&gt;
+</pre>
+
+    <pre id="pivot-5x5-5" data-blurb="★★★">.-. . . *
+        
+. .&gt;. . .
+|       v
+.-. . . .
+  ^      
+. . .-. .
+      v 
+@=.=. . .
+</pre>
+
+    <pre id="pivot-5x5-6" data-blurb="★★★">. . .&gt;. .
+  ! |    
+@=. .-. .
+        
+. . . .=.&gt;
+         
+. . . . .
+         
+. *&gt;.&lt;. .
+</pre>
+
+    <pre id="pivot-5x5-7" data-blurb="★★★">* . @ . .
+v   |   
+. . . . .
+      !  
+. . . . .
+^     ! !
+. .-. . .
+  !     
+. . . . .
+    v
+</pre>
+
+    <pre id="pivot-6x6-1" data-blurb="★★★">. . . . . .
+| v         
+@ . . . . *
+  | |      
+. . . . . .
+| !   ^ | K
+. . . .-.=.
+|          
+. .-. . . .
+v          
+.&gt;. . . . .
+</pre>
+
+    <pre id="pivot-6x6-3" data-blurb="★★★">. @-. .&gt;.-.
+          
+. . . . . .
+          |
+* .&gt;. .=. .
+    !      
+. . . . . .&gt;
+      |   ^
+. . . .=. .
+           
+. .=. . .=.&gt;
+</pre>
+
+    <pre id="pivot-6x6-2" data-blurb="★★★">. .-.-. .=.
+      v   
+. . . . . .
+  |     ! v
+.&gt;. . . . *
+    ^      
+. . . . . .
+|          
+. .-.&lt;. . .
+! |       |
+. . . .&gt;.-@
+</pre>
+
+    <pre id="m44" data-blurb="★★">. .=. *-.
+        
+. . .=. .
+!        
+. . . . .
+  |   ! 
+. . . . .
+  |     |
+. @ . .=.
+</pre>
+
+    <pre id="m45" data-blurb="★★">@ * .&gt;. .
+        
+. .=.=. .
+|     | 
+.&gt;. . . .
+        
+. . . .&gt;.
+|       
+.=. . .-.
+</pre>
+
+    <pre id="m46" data-blurb="★★★">.-. . .
+    ^ 
+. . . .
+       
+.L. . .
+      !
+@ . .-*
+</pre>
+
+    <pre id="m47" data-blurb="★★">@ . . . . .
+v v v v v v
+. . . . . .
+ 
+. . . . . .
+           
+. . . . . .
+  v v v v v
+. . . . . .
+           
+. . . .=. *
+v v v v   v
+</pre>
+
+    <pre id="m48" data-blurb="★">.-.&lt;.&gt;.=. .
+W !       |
+. . .A. . *
+    |   |  
+. .=. . . .
+^ !        
+. .D.-.=.=@
+          | 
+. . .-.-. .
+|          
+.#.=. .&lt;. .
+    v     v
+</pre>
+
+    <pre id="m49" data-blurb="★★★">. . .-@ .
+    |   
+. . . .J.
+        
+* . . . .
+| !     !
+. . . . .
+    v   !
+. . . .-.
+</pre>
+
+    <pre id="m50" data-blurb="★★★">*=. . .
+    v  
+. . . .
+^     |
+. . . .
+  ^   |
+@ .&gt;. .
+</pre>
+
+    <pre id="rotate-tut" data-blurb="Tutorial">instruction: Red links are fixed in place, but rotate with grid
+---
+. . . .
+       
+@ .4. .
+  |    
+. . .-*
+       
+. . . .
+</pre>
+
+    <pre id="rotate1" data-blurb="★">. . .-*
+    |  
+. . . .
+    5  
+.4. . .
+|      
+@ . . .
+</pre>
+
+    <pre id="rotate2" data-blurb="★★">@ .-.=.
+    |  
+. . .4.
+    |  
+* . . .
+|   |  
+. . . . 
+</pre>
+
+    <pre id="rotate3" data-blurb="★★">. . * .
+! 5 v  
+. . . @
+  |    
+. .4. .
+  !    
+. . . .
+</pre>
+
+    <pre id="rotate3b" data-blurb="★★">* . . .
+! 5    
+. . . @
+  |    
+. .4. .
+  !    
+. . . .
+</pre>
+
+    <pre id="rotate-5x5-1" data-blurb="★★">. . . .-@
+      8 
+. .=. . .
+        
+*=. . . .
+        
+. .-. . .
+        
+. . . . .
+</pre>
+
+    <pre id="rotate-5x5-2" data-blurb="★★">. . . . .
+        
+. . . .6*
+  |     
+. . . .=.
+  |     
+.4. . . .
+        |
+. . . .-@
+</pre>
+
+    <pre id="rotate-5x5-2b" data-blurb="★★★">. . . . .
+  !   | 
+.-.-. . .
+  v   |
+. . .-. .
+        
+@ . . . .
+    5   
+. . .=* .
+</pre>
+
+    <pre id="rotate-6x6-1" data-blurb="★★★">@4.=. . . .
+          
+. . . . . .
+      v 8 |
+.-.-. . . .
+!   !   ^   
+. . . . . .
+           
+. .&gt;. . . .
+!          
+* . .4. . .
+</pre>
+
+    <pre id="rotate-6x6-2" data-blurb="★★★">. . *&lt;. . .
+          
+.=. .-. . .
+        5
+. . . .-. .
+        |   
+. . . . . .
+           
+. . . . . .
+    5     | 
+. .=. . @-.
+</pre>
+
+    <pre id="rotate-6x6-3" data-blurb="★★★">.4. . . . @
+!          
+.-. . .=. .
+! 
+. . . . . .
+!           
+.&gt;.6. . . .
+!          
+. . . .=.-.
+      ^    
+. . . . * .
+</pre>
+
+
+  </div>
+
+  <script src="./touching_fish_files/script.js"></script>
+
+
+
+</body>
+
+</html>

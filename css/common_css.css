@@ -1,0 +1,74 @@
+body {
+    background: linear-gradient(to top, #304352, #d7d2cc);
+}
+.header {
+    width: 100%;
+    height: 300px;
+    background: url(../images/backG.png);
+    background-position: -0 500px;
+    background-size: 110%;
+}
+.header ul li {
+    font-size: 24px;
+    float: right;
+    margin: 32px 54px 0 0;
+    transition:  transform .3s;
+}
+.header ul li:hover {
+    transform: rotate(10deg);
+}
+.header ul li a { 
+    color: #fff;
+}
+.nav a {
+    margin: 32px 0 0 54px;
+    float: left;
+    color: #fff;
+    font-family: 'Microsoft YaHei';
+    font-size: 30px;
+    font-weight: 7500;
+    transition:  transform .3s;
+}
+.nav a:hover {
+    color: #fff;
+    transform: rotate(10deg);
+}
+
+
+/* 尾部 */
+.footer {
+    height: 180px;
+    padding: 40px 0;
+    background-color: #212529;
+}
+.footer p {
+    text-align: center;
+    line-height: 1.8;
+    font-weight: 350;
+    font-size: 16px;
+    font-family: -apple-system,BlinkMacSystemFont,opensans,Optima,"Microsoft Yahei",sans-serif;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 1200px){
+    .right-box {
+        display: none;
+    }
+    .main-box {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 800px){
+    .header ul{
+        display: none;
+    }
+}
+
+
+/*隐藏模块*/
+.hide-box {
+    background-color: #666;
+}
+
+.hide-box:hover {
+    background-color: #fff;
+}

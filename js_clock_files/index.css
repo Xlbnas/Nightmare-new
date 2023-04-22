@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+}
+body{
+    background: rgb(8, 4, 19);
+    overflow: hidden;
+}
+.wrapper{
+    width: 100%;
+    text-align: center;
+}
+.wrapper .column,
+.wrapper .colon{
+    display: inline-block;
+    color:rgba(224, 230,235,0.89);    
+    vertical-align: top;
+    font-size: 86px;
+    height: 86px;
+    line-height: 86px;
+    font-weight: 300;
+    
+}
+.wrapper .column{
+    transition: transform 300ms ease-in;
+}
+.wrapper .colon{
+    transform: translateY(calc(50vh - 43px));
+}
+.column div{
+    transition: opacity 500ms, text-shadow 400ms;
+    opacity: 0.25;
+}
+.wrapper .visible{
+    opacity: 1;
+    text-shadow:1px 1px 30px #336699;
+}
+.wrapper .close{
+    opacity: 0.35;
+}
+.wrapper .far{
+    opacity: 0.15;
+}
+.wrapper .disfar{
+    opacity: 0.1;
+}

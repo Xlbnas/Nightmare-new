@@ -1,0 +1,113 @@
+.main-box {
+    margin: 0 auto;
+    padding: 20px;
+    width: 1200px;
+}
+.contin {
+    position: relative;
+    display: inline-block;
+    /* width: 700px; */
+}
+.content-main {
+    position: relative;
+    display: inline-block;
+    width: 700px;
+    height: 220px;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: transform .5s,box-shadow .5s;
+}
+.content-main:hover {
+    transform: translate(-3px,-3px);
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+}
+.content-main .cover-main {
+    float: left;
+    margin: 20px 0 0 20px;
+    width: 300px;
+    height: 150px;
+    overflow: hidden;
+}
+.text-main {
+    margin: 20px 20px 0 0;
+    float: right;
+    width: 340px;
+    height: 150px;
+}
+.content-main .cover-main img {
+    width: 300px;
+}
+.right-box {
+    float: right;
+    padding: 70px 50px;
+    height: 300px;
+    width: 330px;
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 8px;
+}
+.zatan {
+    display: inline-block;
+    padding: 0 6px;
+    background-color: #00a2ff;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #fff;
+}
+.biaoti {
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
+.zhengwen {
+    text-indent: 3em;
+    line-height: 28px;
+    font-size: 14px;
+    color: black;
+}
+.xiawen {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    display: inline-block;
+    height: 40px;
+    width: 700px;
+    border-top: 1px solid #c4c4c4;
+    font-family: 'icomoon';
+}
+.xiawen ul li {
+    float: left;
+    line-height: 40px;
+    padding-left: 20px;
+    font-family: 'icomoon';
+    color: #666;
+}
+.xiawen ul li:nth-child(5) {
+    float: right;
+    padding-right: 10px;
+}
+@media screen and (max-width: 755px) {
+    .xiawen {
+        display: none;
+    }
+    .content-main {
+        width: 340px;
+        height: 350px;
+    }
+    .contin {
+        /* width: 90%; */
+        margin-top: 20px;
+    }
+    .text-main {
+        margin: 0;
+        padding-left: 20px;
+        padding-top: 30px;
+        text-align: left;
+    }
+    .main-box {
+        text-align: center;
+        padding: 0;
+    }
+}
